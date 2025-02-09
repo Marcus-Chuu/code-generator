@@ -1,4 +1,4 @@
-package com.yupi.generator;
+package com.marcuschu.generator;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.ArrayUtil;
