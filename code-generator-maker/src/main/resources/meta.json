@@ -6,8 +6,9 @@
   "author": "marcuschu",
   "createTime": "2023-11-22",
   "fileConfig": {
-    "inputRootPath": "C:/01 - 学习资料/02 - 项目/星球项目/05 - 代码生成器/code-generator/code-generator-demo-projects/acm-template-pro",
-    "outputRootPath": "generated",
+    "inputRootPath": ".source/acm-template-pro",
+    "outputRootPath": "C:/01 - 学习资料/02 - 项目/星球项目/05 - 代码生成器/code-generator/acm-template-pro",
+    "sourceRootPath": "C:/01 - 学习资料/02 - 项目/星球项目/05 - 代码生成器/code-generator/code-generator-demo-projects/acm-template-pro",
     "type": "dir",
     "files": [
       {

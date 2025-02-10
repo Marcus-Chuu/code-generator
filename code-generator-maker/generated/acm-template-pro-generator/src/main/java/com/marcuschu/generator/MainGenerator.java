@@ -19,8 +19,8 @@ public class MainGenerator {
     * @throws IOException
     */
     public static void doGenerate(Object model) throws TemplateException, IOException {
-        String inputRootPath = "C:\\01 - 学习资料\\02 - 项目\\星球项目\\05 - 代码生成器\\code-generator\\code-generator-demo-projects\\acm-template-pro";
-        String outputRootPath = "generated";
+        String inputRootPath = ".source/acm-template-pro";
+        String outputRootPath = "C:/01 - 学习资料/02 - 项目/星球项目/05 - 代码生成器/code-generator/acm-template-pro";
 
         String inputPath;
         String outputPath;
