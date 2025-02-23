@@ -8,6 +8,7 @@ import lombok.Data;
 @Data
 public class DataModel {
 
+
     /**
      * 是否生成循环
      */
