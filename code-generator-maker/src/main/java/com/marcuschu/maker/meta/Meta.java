@@ -14,22 +14,22 @@ public class Meta {
     private String version;
     private String author;
     private String createTime;
-    private FileConfigDTO fileConfig;
-    private ModelConfigDTO modelConfig;
+    private FileConfig fileConfig;
+    private ModelConfig modelConfig;
 
 
     @NoArgsConstructor
     @Data
-    public static class FileConfigDTO {
+    public static class FileConfig {
         private String inputRootPath;
         private String outputRootPath;
         private String sourceRootPath;
         private String type;
-        private List<FilesDTO> files;
+        private List<FileInfo> files;
 
         @NoArgsConstructor
         @Data
-        public static class FilesDTO {
+        public static class FileInfo {
             private String inputPath;
             private String outputPath;
             private String type;
@@ -37,18 +37,18 @@ public class Meta {
             private String condition;
             private String groupKey;
             private String groupName;
-            private List<FilesDTO> files;
+            private List<FileInfo> files;
         }
     }
 
     @NoArgsConstructor
     @Data
-    public static class ModelConfigDTO {
-        private List<ModelsDTO> models;
+    public static class ModelConfig {
+        private List<ModelInfo> models;
 
         @NoArgsConstructor
         @Data
-        public static class ModelsDTO {
+        public static class ModelInfo {
             private String fieldName;
             private String type;
             private String description;
@@ -56,7 +56,7 @@ public class Meta {
             private String abbr;
             private String groupKey;
             private String groupName;
-            private List<ModelsDTO> models;
+            private List<ModelInfo> models;
             private String condition;
 
             // 中间参数

@@ -8,7 +8,6 @@ import com.marcuschu.maker.meta.enums.FileGenerateTypeEnum;
 import com.marcuschu.maker.meta.enums.FileTypeEnum;
 import com.marcuschu.maker.meta.enums.ModelTypeEnum;
 
-import java.io.File;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,22 +24,22 @@ public class MetaValidator {
     }
 
     public static void validAndFillModelConfig(Meta meta) {
-        Meta.ModelConfigDTO modelConfig = meta.getModelConfig();
+        Meta.ModelConfig modelConfig = meta.getModelConfig();
         if (modelConfig == null) {
             return;
         }
         // modelConfig 默认值
-        List<Meta.ModelConfigDTO.ModelsDTO> modelInfoList = modelConfig.getModels();
+        List<Meta.ModelConfig.ModelInfo> modelInfoList = modelConfig.getModels();
         if (!CollectionUtil.isNotEmpty(modelInfoList)) {
             return;
         }
-        for (Meta.ModelConfigDTO.ModelsDTO modelInfo : modelInfoList) {
+        for (Meta.ModelConfig.ModelInfo modelInfo : modelInfoList) {
 
             // 为 group，不校验
             String groupKey = modelInfo.getGroupKey();
             if (StrUtil.isNotEmpty(groupKey)) {
                 // 生成中间参数
-                List<Meta.ModelConfigDTO.ModelsDTO> subModelInfoList = modelInfo.getModels();
+                List<Meta.ModelConfig.ModelInfo> subModelInfoList = modelInfo.getModels();
                 String allArgsStr = modelInfo.getModels().stream()
                         .map(subModelInfo -> String.format("\"--%s\"", subModelInfo.getFieldName()))
                         .collect(Collectors.joining(", "));
@@ -64,7 +63,7 @@ public class MetaValidator {
 
     public static void validAndFillFileConfig(Meta meta) {
         // fileConfig 默认值
-        Meta.FileConfigDTO fileConfig = meta.getFileConfig();
+        Meta.FileConfig fileConfig = meta.getFileConfig();
         if (fileConfig == null) {
             return;
         }
@@ -92,11 +91,11 @@ public class MetaValidator {
         }
 
         // fileInfo 默认值
-        List<Meta.FileConfigDTO.FilesDTO> fileInfoList = fileConfig.getFiles();
+        List<Meta.FileConfig.FileInfo> fileInfoList = fileConfig.getFiles();
         if (!CollectionUtil.isNotEmpty(fileInfoList)) {
             return;
         }
-        for (Meta.FileConfigDTO.FilesDTO fileInfo : fileInfoList) {
+        for (Meta.FileConfig.FileInfo fileInfo : fileInfoList) {
 
             // type：默认 inputPath 有文件后缀（如 .java）为 file，否则为 dir
             String type = fileInfo.getType();
